@@ -2,12 +2,17 @@ https://kyverno.io/docs
 
 ## Verify that Kyverno has been installed correctly
 
+Please run the following command:
+
 ```plain
 kubectl get pod -n kyverno
 ```{{exec}}
 
+You should see all Kyverno Pods in Running state.
+
 ## Create Policy
-Create a simple policy that requires certain *Pod* labels to be set:
+Let's create our first simple policy.
+Create a simple policy that requires the *environment* label to be set at a Pod level.
 ```
 cat <<EOF > pod-require-env-label.yaml
 apiVersion: policies.kyverno.io/v1
@@ -31,8 +36,28 @@ k -f pod-require-env-label.yaml apply
 ```{{exec}}
 
 ## Test
-Creating a pod without required labels is not possible
+
+Let's try to create a simple Pod.
+We expect this to fail.
 ```
 sleep 5 # wait till policy was implemented
 k run nginx --image=nginx
 ```{{exec}}
+
+## Try to respect the policy
+
+Try to create a Pod with the name `nginx` in the namespace `default` that is allowed by our policy.
+
+<details><summary>Tip</summary>
+
+You can use the same command as before... Just add the label `environment` with any value.
+
+</details>
+
+<details><summary>Solution</summary>
+
+```
+k run nginx --image=nginx -l environment=prod
+```{{exec}}
+
+</details>
