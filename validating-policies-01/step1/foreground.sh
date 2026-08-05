@@ -1,8 +1,6 @@
 #!/bin/bash
 
-set -x # to test stderr output in /var/log/killercoda
-
-echo start install kyverno
+echo Start install kyverno
 
 helm repo add kyverno https://kyverno.github.io/kyverno
 helm repo update
