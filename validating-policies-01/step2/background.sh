@@ -1,3 +1,3 @@
 #!/bin/bash
 
-k delete vpol check-labels --ignore-not-found
+kubectl delete vpol check-labels --ignore-not-found
