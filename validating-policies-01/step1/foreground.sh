@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sleep 10
+
 echo Start install kyverno
 
 helm repo add kyverno https://kyverno.github.io/kyverno
