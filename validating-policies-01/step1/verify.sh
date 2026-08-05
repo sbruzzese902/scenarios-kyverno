@@ -3,7 +3,7 @@
 echo Verify solution
 
 # Verify that the Validating Policy called check-labels still exists
-policy_exists=$(kubectl get cpol check-labels --ignore-not-found)
+policy_exists=$(kubectl get vpol check-labels --ignore-not-found)
 if [ -z "$policy_exists" ]; then
     echo "Verification failed: Validating Policy 'check-labels' does not exist."
     exit 1

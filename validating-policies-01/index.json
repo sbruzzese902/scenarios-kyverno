@@ -8,9 +8,15 @@
     },
     "steps": [
       {
-        "title": "Installation and first contact",
+        "title": "Apply a Validating Policy",
         "text": "step1/text.md",
         "verify": "step1/verify.sh"
+      },
+      {
+        "title": "Create a Validating Policy with a deny rule",
+        "background": "step2/background.sh",
+        "text": "step2/text.md",
+        "verify": "step2/verify.sh"
       }
     ]
   },
