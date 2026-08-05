@@ -1,0 +1,19 @@
+{
+  "title": "Kyverno - Validating Policies - Basic",
+  "description": "Apply and verify some basic Validating Policies",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "background.sh"
+    },
+    "steps": [
+      {
+        "title": "Installation and first contact",
+        "text": "step1/text.md"
+      }
+    ]
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-2nodes"
+  }
+}
