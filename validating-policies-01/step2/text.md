@@ -12,7 +12,7 @@ Feel free to explore the [docs](https://kyverno.io/docs) to search for existing 
 This should not work:
 
 ```
-k run nginx --image=nginx
+k run nginx-no-req --image=nginx
 ```{{exec}}
 
 This should work:
@@ -21,7 +21,7 @@ cat <<EOF > pod.yaml
 apiVersion: v1
 kind: Pod
 metadata: 
-  name: pod-with-requests-xyz
+  name: pod-with-requests
   namespace: default
 spec:
   containers:
@@ -33,7 +33,7 @@ spec:
         memory: "128Mi"
 EOF
 k -f pod.yaml apply
-```
+```{{exec}}
 
 <details><summary>Tip</summary>
 

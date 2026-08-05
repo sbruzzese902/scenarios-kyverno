@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Verify that the Validating Policy called require-requests exists in default namespace
-policy_exists=$(kubectl get cpol require-requests --ignore-not-found)
+policy_exists=$(kubectl get vpol require-requests --ignore-not-found)
 if [ -z "$policy_exists" ]; then
     echo "Verification failed: Validating Policy 'require-requests' does not exist."
     exit 1
